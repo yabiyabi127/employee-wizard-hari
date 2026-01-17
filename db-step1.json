@@ -1,0 +1,54 @@
+{
+  "departments": [
+    {
+      "id": "1",
+      "name": "Lending"
+    },
+    {
+      "id": "2",
+      "name": "Funding"
+    },
+    {
+      "id": "3",
+      "name": "Operations"
+    },
+    {
+      "id": "4",
+      "name": "Engineering"
+    }
+  ],
+  "basicInfo": [
+    {
+      "id": "8da0",
+      "fullName": "hari kurniawn",
+      "email": "hari@gmail.com",
+      "department": "Engineering",
+      "role": "Engineer",
+      "employeeId": "ENG-001"
+    },
+    {
+      "id": "408f",
+      "fullName": "hari kurniawan",
+      "email": "hariniawa127@mahasiswa.unikom.ac.id",
+      "department": "Funding",
+      "role": "Engineer",
+      "employeeId": "FUN-001"
+    },
+    {
+      "id": "7f5b",
+      "fullName": "edan",
+      "email": "awe@a2e.com",
+      "department": "Funding",
+      "role": "Ops",
+      "employeeId": "FUN-002"
+    },
+    {
+      "id": "cb88",
+      "fullName": "utu binjolo",
+      "email": "hari@awea.com",
+      "department": "Funding",
+      "role": "Engineer",
+      "employeeId": "FUN-003"
+    }
+  ]
+}
