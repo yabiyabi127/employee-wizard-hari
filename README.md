@@ -109,6 +109,7 @@ Endpoints used:
 ### 1. Local Running Development
 ```bash
 git clone `https://github.com/yabiyabi127/employee-wizard-hari.git`
+node version `v22.21.1`
 go to project
 npm install
 npm run dev <<< terminal 1 for front end
