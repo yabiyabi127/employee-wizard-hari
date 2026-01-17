@@ -16,16 +16,27 @@ This is because the backend (mock API) is not deployed.
 API requests are still pointing to a local base URL (localhost), therefore no data can be retrieved in the deployed environment.
 
 Based on the assignment requirements, backend deployment was not requested, so the backend is intentionally kept local.
-
 To experience the full and accurate functionality of the application, please run the project locally by:
-
 Cloning the repository
-
 Installing dependencies
-
 Running the frontend and mock API locally
-
 Detailed steps are provided below.
+
+---
+## 🖥 Screenshots
+
+### Form submit
+<img
+  src="https://drive.google.com/uc?export=view&id=1pqakoU9-WcUwpTnVILahGheFKGxaHUwK"
+  width="400"
+  alt="Form"
+/>
+### Employee Page List
+<img
+  src="https://drive.google.com/uc?export=view&id=1GYZUNYDUEitt9-aciALIYUfLmqouTQoW"
+  width="400"
+  alt="Form"
+/>
 
 ---
 
