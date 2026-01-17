@@ -1,73 +1,122 @@
-# React + TypeScript + Vite
+# Employee Wizard – Frontend Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, accessible multi-step employee form built with **React + Vite**, featuring role-based flow, autosave drafts, async submission simulation, and unit tests.
 
-Currently, two official plugins are available:
+🔗 **Live Demo**: [Click Here  ](https://employee-wizard-hari.pages.dev/) 
+📦 **Repository**: [GitHub repo](https://github.com/yabiyabi127/employee-wizard-hari)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔔 Important Note for Reviewers
+Please note:
+When accessing the deployed application at
+👉 https://employee-wizard-hari.pages.dev/
 
-## React Compiler
+some functionalities will not work as expected.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This is because the backend (mock API) is not deployed.
+API requests are still pointing to a local base URL (localhost), therefore no data can be retrieved in the deployed environment.
 
-## Expanding the ESLint configuration
+Based on the assignment requirements, backend deployment was not requested, so the backend is intentionally kept local.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+To experience the full and accurate functionality of the application, please run the project locally by:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Cloning the repository
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Installing dependencies
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Running the frontend and mock API locally
+
+Detailed steps are provided below.
+
+---
+
+## ✨ Features
+
+- 🔐 **Role-based flow**
+  - **Admin**: Step 1 (Basic Info) → Step 2 (Details & Submit)
+  - **Ops**: Direct access to Step 2 only
+- 🧭 **Multi-step Wizard**
+  - Clear step navigation
+  - Conditional buttons based on role
+- 💾 **Draft Autosave**
+  - Automatically saves progress to `localStorage` after 2s idle
+  - Separate drafts per role (`draft_admin`, `draft_ops`)
+- 🔍 **Accessible Autocomplete**
+  - Keyboard navigation (Arrow / Enter / Escape)
+  - Screen reader friendly (`combobox`, `listbox`, `option`)
+  - Default suggestions on focus
+- ⏳ **Async Submit Simulation**
+  - Sequential API calls with progress logs
+  - Artificial delay to simulate real backend behavior
+- 🧪 **Unit Tests**
+  - Wizard role access
+  - Draft autosave
+  - Autocomplete behavior
+  - Submit flow
+
+---
+
+## 🛠 Tech Stack
+
+- **React 18**
+- **Vite**
+- **TypeScript**
+- **React Router**
+- **Vitest + React Testing Library**
+- **CSS**
+
+---
+
+## 🧩 Application Flow
+
+### Admin
+1. Fill **Step 1 – Basic Info**
+2. Continue to **Step 2 – Details**
+3. Submit → data sent sequentially
+
+### Ops
+1. Directly access **Step 2 – Details**
+2. Submit → details only (cant effect to employee page list because only submit to detail Database json)
+
+> Authentication is intentionally **not implemented**.  
+> Roles are simulated via query parameter or internal toggle as required by the assignment.
+---
+## 💾 Draft Autosave
+
+- Drafts are stored in **browser `localStorage`**
+- Autosaved after **2 seconds of inactivity**
+- Loaded automatically when returning to the wizard
+
+Example keys:
+- `draft_admin`
+- `draft_ops`
+
+> Backend draft persistence is out of scope for this assignment.
+---
+## 🌐 API / Backend
+
+This project uses **mock APIs** for demonstration purposes.
+
+- During local development: `json-server`
+
+Endpoints used:
+- `GET /departments`
+- `GET /locations`
+- `POST /basicInfo`
+- `POST /details`
+---
+## 🚀 Getting Started (Local Development)
+
+### 1. Local Running Development
+```bash
+git clone `https://github.com/yabiyabi127/employee-wizard-hari.git`
+go to project
+npm install
+npm run dev <<< terminal 1 for front end
+npm run api <<< terminal 2 for backend
+open browser `http://localhost:5173/`
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. For Running Unit Test
+```bash
+npm run test
 ```
