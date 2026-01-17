@@ -1,0 +1,15 @@
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field__label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.field__meta {
+  min-height: 18px;
+  display: flex;
+  align-items: flex-start;
+}

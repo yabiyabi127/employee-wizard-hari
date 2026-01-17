@@ -1,0 +1,51 @@
+.ac {
+  position: relative;
+}
+.ac__wrap {
+  position: relative;
+}
+.ac__spinner {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: rgba(255, 255, 255, 0.75);
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ac__menu {
+  position: absolute;
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(18, 24, 44, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  z-index: 20;
+}
+.ac__item {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.ac__item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.ac__item.is-active {
+  background: rgba(124, 92, 255, 0.16);
+}
